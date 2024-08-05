@@ -8,22 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		CD6A63AA2C5F8DD000615168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63A92C5F8DD000615168 /* AppDelegate.swift */; };
-		CD6A63AC2C5F8DD000615168 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63AB2C5F8DD000615168 /* SceneDelegate.swift */; };
-		CD6A63AE2C5F8DD000615168 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63AD2C5F8DD000615168 /* ViewController.swift */; };
-		CD6A63B12C5F8DD000615168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD6A63AF2C5F8DD000615168 /* Main.storyboard */; };
+		CD6A63AE2C5F8DD000615168 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63AD2C5F8DD000615168 /* NotesListViewController.swift */; };
 		CD6A63B32C5F8DD100615168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A63B22C5F8DD100615168 /* Assets.xcassets */; };
 		CD6A63B62C5F8DD100615168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD6A63B42C5F8DD100615168 /* LaunchScreen.storyboard */; };
+		CD6A63BE2C5F8F5100615168 /* SimpleNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63BD2C5F8F5100615168 /* SimpleNoteTableViewCell.swift */; };
+		CD6A63C02C5F8F6300615168 /* ImageNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63BF2C5F8F6300615168 /* ImageNoteTableViewCell.swift */; };
+		CD6A63C32C5F915D00615168 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD6A63C22C5F915D00615168 /* SnapKit */; };
+		CD6A63C72C5F951200615168 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63C62C5F951200615168 /* Note.swift */; };
+		CD6A63CB2C5F959C00615168 /* NotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63CA2C5F959C00615168 /* NotesListViewModel.swift */; };
+		CD6A63CD2C5F971E00615168 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63CC2C5F971E00615168 /* TableViewSection.swift */; };
+		CD6A63CF2C5F9AA300615168 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63CE2C5F9AA300615168 /* UIColor+Ex.swift */; };
+		CDAEE7A02C6108E700CE9046 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAEE79F2C6108E700CE9046 /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CD6A63A62C5F8DD000615168 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6A63A92C5F8DD000615168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD6A63AB2C5F8DD000615168 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CD6A63AD2C5F8DD000615168 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CD6A63B02C5F8DD000615168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD6A63AD2C5F8DD000615168 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 		CD6A63B22C5F8DD100615168 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD6A63B52C5F8DD100615168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD6A63B72C5F8DD100615168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD6A63BD2C5F8F5100615168 /* SimpleNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNoteTableViewCell.swift; sourceTree = "<group>"; };
+		CD6A63BF2C5F8F6300615168 /* ImageNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNoteTableViewCell.swift; sourceTree = "<group>"; };
+		CD6A63C62C5F951200615168 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		CD6A63CA2C5F959C00615168 /* NotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewModel.swift; sourceTree = "<group>"; };
+		CD6A63CC2C5F971E00615168 /* TableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
+		CD6A63CE2C5F9AA300615168 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		CDAEE79F2C6108E700CE9046 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6A63C32C5F915D00615168 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,14 +69,75 @@
 			isa = PBXGroup;
 			children = (
 				CD6A63A92C5F8DD000615168 /* AppDelegate.swift */,
-				CD6A63AB2C5F8DD000615168 /* SceneDelegate.swift */,
-				CD6A63AD2C5F8DD000615168 /* ViewController.swift */,
-				CD6A63AF2C5F8DD000615168 /* Main.storyboard */,
+				CD6A63CC2C5F971E00615168 /* TableViewSection.swift */,
+				CDAEE7A12C61090500CE9046 /* Note */,
+				CD6A63C92C5F956200615168 /* NotesList */,
+				CD6A63D02C5F9AB700615168 /* Extentions */,
 				CD6A63B22C5F8DD100615168 /* Assets.xcassets */,
 				CD6A63B42C5F8DD100615168 /* LaunchScreen.storyboard */,
 				CD6A63B72C5F8DD100615168 /* Info.plist */,
 			);
 			path = NotesApp;
+			sourceTree = "<group>";
+		};
+		CD6A63C42C5F94FF00615168 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD6A63AD2C5F8DD000615168 /* NotesListViewController.swift */,
+				CD6A63BD2C5F8F5100615168 /* SimpleNoteTableViewCell.swift */,
+				CD6A63BF2C5F8F6300615168 /* ImageNoteTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD6A63C52C5F950500615168 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD6A63CA2C5F959C00615168 /* NotesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CD6A63C82C5F955500615168 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD6A63C62C5F951200615168 /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD6A63C92C5F956200615168 /* NotesList */ = {
+			isa = PBXGroup;
+			children = (
+				CD6A63C82C5F955500615168 /* Model */,
+				CD6A63C52C5F950500615168 /* ViewModel */,
+				CD6A63C42C5F94FF00615168 /* View */,
+			);
+			path = NotesList;
+			sourceTree = "<group>";
+		};
+		CD6A63D02C5F9AB700615168 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				CD6A63CE2C5F9AA300615168 /* UIColor+Ex.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		CDAEE7A12C61090500CE9046 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				CDAEE7A22C61090B00CE9046 /* ViewController */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		CDAEE7A22C61090B00CE9046 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CDAEE79F2C6108E700CE9046 /* NoteViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +156,9 @@
 			dependencies = (
 			);
 			name = NotesApp;
+			packageProductDependencies = (
+				CD6A63C22C5F915D00615168 /* SnapKit */,
+			);
 			productName = NotesApp;
 			productReference = CD6A63A62C5F8DD000615168 /* NotesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +187,9 @@
 				Base,
 			);
 			mainGroup = CD6A639D2C5F8DD000615168;
+			packageReferences = (
+				CD6A63C12C5F915D00615168 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = CD6A63A72C5F8DD000615168 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +206,6 @@
 			files = (
 				CD6A63B62C5F8DD100615168 /* LaunchScreen.storyboard in Resources */,
 				CD6A63B32C5F8DD100615168 /* Assets.xcassets in Resources */,
-				CD6A63B12C5F8DD000615168 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +216,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD6A63AE2C5F8DD000615168 /* ViewController.swift in Sources */,
+				CD6A63CF2C5F9AA300615168 /* UIColor+Ex.swift in Sources */,
+				CD6A63CD2C5F971E00615168 /* TableViewSection.swift in Sources */,
+				CD6A63C72C5F951200615168 /* Note.swift in Sources */,
+				CD6A63AE2C5F8DD000615168 /* NotesListViewController.swift in Sources */,
+				CDAEE7A02C6108E700CE9046 /* NoteViewController.swift in Sources */,
 				CD6A63AA2C5F8DD000615168 /* AppDelegate.swift in Sources */,
-				CD6A63AC2C5F8DD000615168 /* SceneDelegate.swift in Sources */,
+				CD6A63BE2C5F8F5100615168 /* SimpleNoteTableViewCell.swift in Sources */,
+				CD6A63CB2C5F959C00615168 /* NotesListViewModel.swift in Sources */,
+				CD6A63C02C5F8F6300615168 /* ImageNoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CD6A63AF2C5F8DD000615168 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD6A63B02C5F8DD000615168 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CD6A63B42C5F8DD100615168 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +368,6 @@
 				INFOPLIST_FILE = NotesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +395,6 @@
 				INFOPLIST_FILE = NotesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +432,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD6A63C12C5F915D00615168 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD6A63C22C5F915D00615168 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD6A63C12C5F915D00615168 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD6A639E2C5F8DD000615168 /* Project object */;
 }
