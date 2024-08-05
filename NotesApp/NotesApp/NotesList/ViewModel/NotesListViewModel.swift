@@ -29,12 +29,14 @@ final class NotesListViewModel: NotesListViewModelProtocol {
                                                     description: "First note description",
                                                     date: Date(),
                                                     imageURL: nil,
-                                                    image: nil),
-                                               Note(title: "First note",
-                                                            description: "First note description",
+                                                    image: nil,
+                                                    category: nil),
+                                               Note(title: "Second note",
+                                                            description: "Second note description",
                                                             date: Date(),
                                                             imageURL: nil,
-                                                            image: nil)
+                                                            image: nil,
+                                                            category: .friends)
                                        ])
         self.section = [section]
     }
