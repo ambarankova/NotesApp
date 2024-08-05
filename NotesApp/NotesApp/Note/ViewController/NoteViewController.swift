@@ -60,13 +60,13 @@ final class NoteViewController: UIViewController {
         
     }
     
-//    @objc private func addImage() {
-//        
-//    }
-//
-//    @objc private func chooseCategory() {
-//
-//    }
+    @objc private func addImage() {
+        
+    }
+
+    @objc private func chooseCategory() {
+
+    }
     
     private func setupUI() {
         view.addSubview(attachmentView)
@@ -110,16 +110,17 @@ final class NoteViewController: UIViewController {
         let trashButton = UIBarButtonItem(barButtonSystemItem: .trash,
                                           target: self,
                                           action: #selector(deleteAction))
-//        let addImageButton = UIBarButtonItem(title: "Add image",
-//                                             image: nil,
-//                                             target: self,
-//                                             action: #selector(addImage))
-//        let categoryButton = UIBarButtonItem(title: "Category",
-//                                             image: nil,
-//                                             target: self,
-//                                             action: #selector(chooseCategory))
+        let addImageButton = UIBarButtonItem(title: "Add image",
+                                             image: nil,
+                                             target: self,
+                                             action: #selector(addImage))
+        let categoryButton = UIBarButtonItem(title: "Category",
+                                             image: nil,
+                                             target: self,
+                                             action: #selector(chooseCategory))
+        let spacing = UIBarButtonItem(systemItem: .flexibleSpace)
 
-        setToolbarItems([trashButton], animated: true)
+        setToolbarItems([trashButton, spacing, addImageButton, spacing, categoryButton], animated: true)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                             target: self,

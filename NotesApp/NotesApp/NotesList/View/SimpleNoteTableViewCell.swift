@@ -43,6 +43,20 @@ final class SimpleNoteTableViewCell: UITableViewCell {
     // MARK: - Methods
     func set(note: Note) {
         titleLabel.text = note.title
+        setBackgroundColor(note: note)
+    }
+    
+    func setBackgroundColor(note: Note) {
+        switch note.category {
+        case .entertainment: containerView.backgroundColor = .lightYellow
+        case .home: containerView.backgroundColor = .lightRed
+        case .work: containerView.backgroundColor = .lightBlue
+        case .food: containerView.backgroundColor = .lightPink
+        case .sport: containerView.backgroundColor = .lightOrange
+        case .friends: containerView.backgroundColor = .lightViolet
+        case .thoughts: containerView.backgroundColor = .lightGreen
+        default: containerView.backgroundColor = .lightGray
+        }
     }
     
     // MARK: - Private Methods
