@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class NoteViewController: UIViewController {
+final class NoteViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - GUI Variables
     private let attachmentView: UIImageView = {
@@ -36,6 +36,7 @@ final class NoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textView.delegate = self
         configure()
         setupUI()
     }
@@ -131,11 +132,18 @@ final class NoteViewController: UIViewController {
                                              target: self,
                                              action: #selector(chooseCategory))
         let spacing = UIBarButtonItem(systemItem: .flexibleSpace)
-
-        setToolbarItems([trashButton, spacing, addImageButton, spacing, categoryButton], animated: true)
         
+        guard let vm = viewModel else { return }
+        if vm.text.isEmpty {
+            setToolbarItems([addImageButton, spacing, categoryButton], animated: true)
+        } else {
+            setToolbarItems([trashButton, spacing, addImageButton, spacing, categoryButton], animated: true)
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
-                                                            target: self,
-                                                            action: #selector(saveAction))
+                                                                target: self,
+                                                                action: #selector(saveAction))
     }
 }
