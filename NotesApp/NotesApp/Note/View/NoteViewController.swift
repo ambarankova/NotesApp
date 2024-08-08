@@ -7,14 +7,13 @@
 
 import UIKit
 
-final class NoteViewController: UIViewController {
+final class NoteViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - GUI Variables
     private let attachmentView: UIImageView = {
         let view = UIImageView()
         
         view.layer.cornerRadius = 10
-        view.image = UIImage(named: "mockImage")
         view.layer.masksToBounds = true
         view.contentMode = .scaleAspectFill
         
@@ -30,10 +29,15 @@ final class NoteViewController: UIViewController {
         return view
     }()
     
+    // MARK: - Properties
+    var viewModel: NoteViewModelProtocol?
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textView.delegate = self
+        configure()
         setupUI()
     }
     
@@ -45,28 +49,37 @@ final class NoteViewController: UIViewController {
     
     // MARK: - Methods
     func set(note: Note) {
-        textView.text = note.title + " " + note.description
+        textView.text = note.title + " " + (note.description ?? "")
         guard let imageData = note.image,
                 let image = UIImage(data: imageData) else { return }
         attachmentView.image = image
     }
     
     // MARK: - Private Methods
+    private func configure() {
+        textView.text = viewModel?.text
+//        guard let imageData = note.image,
+//                let image = UIImage(data: imageData) else { return }
+//        attachmentView.image = image
+    }
+    
     @objc private func saveAction() {
-        
+        viewModel?.save(with: textView.text)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func deleteAction() {
-        
+        viewModel?.delete()
+        navigationController?.popViewController(animated: true)
     }
     
-//    @objc private func addImage() {
-//        
-//    }
-//
-//    @objc private func chooseCategory() {
-//
-//    }
+    @objc private func addImage() {
+        
+    }
+
+    @objc private func chooseCategory() {
+
+    }
     
     private func setupUI() {
         view.addSubview(attachmentView)
@@ -110,19 +123,27 @@ final class NoteViewController: UIViewController {
         let trashButton = UIBarButtonItem(barButtonSystemItem: .trash,
                                           target: self,
                                           action: #selector(deleteAction))
-//        let addImageButton = UIBarButtonItem(title: "Add image",
-//                                             image: nil,
-//                                             target: self,
-//                                             action: #selector(addImage))
-//        let categoryButton = UIBarButtonItem(title: "Category",
-//                                             image: nil,
-//                                             target: self,
-//                                             action: #selector(chooseCategory))
-
-        setToolbarItems([trashButton], animated: true)
+        let addImageButton = UIBarButtonItem(title: "Add image",
+                                             image: nil,
+                                             target: self,
+                                             action: #selector(addImage))
+        let categoryButton = UIBarButtonItem(title: "Category",
+                                             image: nil,
+                                             target: self,
+                                             action: #selector(chooseCategory))
+        let spacing = UIBarButtonItem(systemItem: .flexibleSpace)
         
+        guard let vm = viewModel else { return }
+        if vm.text.isEmpty {
+            setToolbarItems([addImageButton, spacing, categoryButton], animated: true)
+        } else {
+            setToolbarItems([trashButton, spacing, addImageButton, spacing, categoryButton], animated: true)
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
-                                                            target: self,
-                                                            action: #selector(saveAction))
+                                                                target: self,
+                                                                action: #selector(saveAction))
     }
 }
