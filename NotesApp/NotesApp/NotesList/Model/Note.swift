@@ -19,9 +19,9 @@ enum Category {
 
 struct Note: TableViewItemProtocol {
     let title: String
-    let description: String
+    let description: String?
     let date: Date
-    let imageURL: String?
-    let image: Data?
-    let category: Category?
+    let imageURL: URL?
+    let image: Data? = nil
+    let category: Category? = nil
 }
