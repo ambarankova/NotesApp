@@ -31,6 +31,8 @@ final class NoteViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - Properties
     var viewModel: NoteViewModelProtocol?
+    private let imageHeight = 200
+    private var imageName: String?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -58,13 +60,11 @@ final class NoteViewController: UIViewController, UITextViewDelegate {
     // MARK: - Private Methods
     private func configure() {
         textView.text = viewModel?.text
-//        guard let imageData = note.image,
-//                let image = UIImage(data: imageData) else { return }
-//        attachmentView.image = image
+        attachmentView.image = viewModel?.image
     }
     
     @objc private func saveAction() {
-        viewModel?.save(with: textView.text)
+        viewModel?.save(with: textView.text, and: attachmentView.image, imageName: imageName)
         navigationController?.popViewController(animated: true)
     }
     
@@ -74,7 +74,11 @@ final class NoteViewController: UIViewController, UITextViewDelegate {
     }
     
     @objc private func addImage() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
         
+        present(imagePicker, animated: true)
     }
 
     @objc private func chooseCategory() {
@@ -92,12 +96,13 @@ final class NoteViewController: UIViewController, UITextViewDelegate {
         textView.layer.borderWidth = textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? 1 : 0
         
         setupConstraints()
-        setImageHeight()
         setupBars()
     }
     
     private func setupConstraints() {
         attachmentView.snp.makeConstraints { make in
+            let height = attachmentView.image != nil ? imageHeight : 0
+            make.height.equalTo(height)
             make.top.trailing.leading.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
         
@@ -108,10 +113,9 @@ final class NoteViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    private func setImageHeight() {
-        let height = attachmentView.image != nil ? 200 : 0
-            attachmentView.snp.makeConstraints { make in
-                make.height.equalTo(height)
+    private func updateImageHeight() {
+        attachmentView.snp.updateConstraints { make in
+            make.height.equalTo(imageHeight)
         }
     }
     
@@ -123,8 +127,7 @@ final class NoteViewController: UIViewController, UITextViewDelegate {
         let trashButton = UIBarButtonItem(barButtonSystemItem: .trash,
                                           target: self,
                                           action: #selector(deleteAction))
-        let addImageButton = UIBarButtonItem(title: "Add image",
-                                             image: nil,
+        let photoButton = UIBarButtonItem(barButtonSystemItem: .camera,
                                              target: self,
                                              action: #selector(addImage))
         let categoryButton = UIBarButtonItem(title: "Category",
@@ -135,9 +138,9 @@ final class NoteViewController: UIViewController, UITextViewDelegate {
         
         guard let vm = viewModel else { return }
         if vm.text.isEmpty {
-            setToolbarItems([addImageButton, spacing, categoryButton], animated: true)
+            setToolbarItems([photoButton, spacing, categoryButton], animated: true)
         } else {
-            setToolbarItems([trashButton, spacing, addImageButton, spacing, categoryButton], animated: true)
+            setToolbarItems([trashButton, spacing, photoButton, spacing, categoryButton], animated: true)
         }
     }
     
@@ -145,5 +148,21 @@ final class NoteViewController: UIViewController, UITextViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                                 target: self,
                                                                 action: #selector(saveAction))
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension NoteViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage,
+              let url = info[.imageURL] as? URL else { return }
+        imageName = url.lastPathComponent
+        attachmentView.image = selectedImage
+        updateImageHeight()
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2D89912C65448D00AD2A7B /* FileManagerPersistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D89902C65448D00AD2A7B /* FileManagerPersistant.swift */; };
 		CD6A63AA2C5F8DD000615168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63A92C5F8DD000615168 /* AppDelegate.swift */; };
 		CD6A63AE2C5F8DD000615168 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A63AD2C5F8DD000615168 /* NotesListViewController.swift */; };
 		CD6A63B32C5F8DD100615168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A63B22C5F8DD100615168 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD2D89902C65448D00AD2A7B /* FileManagerPersistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerPersistant.swift; sourceTree = "<group>"; };
 		CD6A63A62C5F8DD000615168 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6A63A92C5F8DD000615168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD6A63AD2C5F8DD000615168 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				CD6A63A92C5F8DD000615168 /* AppDelegate.swift */,
 				CD6A63CC2C5F971E00615168 /* TableViewSection.swift */,
 				CD92A9232C622F530067E6B0 /* NotePersistant.swift */,
+				CD2D89902C65448D00AD2A7B /* FileManagerPersistant.swift */,
 				CDAEE7A12C61090500CE9046 /* Note */,
 				CD6A63C92C5F956200615168 /* NotesList */,
 				CD6A63D02C5F9AB700615168 /* Extentions */,
@@ -253,6 +256,7 @@
 				CD6A63C72C5F951200615168 /* Note.swift in Sources */,
 				CD6A63AE2C5F8DD000615168 /* NotesListViewController.swift in Sources */,
 				CDAEE7A02C6108E700CE9046 /* NoteViewController.swift in Sources */,
+				CD2D89912C65448D00AD2A7B /* FileManagerPersistant.swift in Sources */,
 				CD6A63AA2C5F8DD000615168 /* AppDelegate.swift in Sources */,
 				CD92A9242C622F530067E6B0 /* NotePersistant.swift in Sources */,
 				CD6A63BE2C5F8F5100615168 /* SimpleNoteTableViewCell.swift in Sources */,
